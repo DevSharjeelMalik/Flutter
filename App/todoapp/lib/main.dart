@@ -8,6 +8,7 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  //var screenSize = MediaQuery.of(context).size;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
                         bottomLeft: Radius.circular(30.0),
                         bottomRight: Radius.circular(30.0),
                       ),
-                      color: midPurpleColor,
+                      color: darkGreenColor,
                     ),
 
                   child: Row(
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
                           margin: EdgeInsets.only(bottom: 40, left: 30),
                           child: Text(
                             'Notes',
-                            style: NotesTileStyle,
+                            style: notesTileStyle,
                           ),
                         ),
 //                        ),
@@ -67,8 +68,8 @@ class MyApp extends StatelessWidget {
                   width:70,
                   margin: EdgeInsets.fromLTRB(350, 150, 0, 0),
                   child: FloatingActionButton(
-                    child: Icon(Icons.add, size: 50),
-                    backgroundColor: midOrangeColor,
+                    child: Icon(Icons.add, size: 40),
+                    backgroundColor: midGreenColor,
                     onPressed: (){},
                   ),
                 )
@@ -77,7 +78,7 @@ class MyApp extends StatelessWidget {
             appBar: new TabBar(
               tabs: [
                 Tab(
-                  icon: new Icon(Icons.calendar_today),
+                  icon: new Icon(Icons.calendar_today,),
                 ),
                 Tab(
                   icon: new Icon(Icons.add),
@@ -86,13 +87,13 @@ class MyApp extends StatelessWidget {
                   icon: new Icon(Icons.menu),
                 ),
               ],
-              labelColor: midOrangeColor,
+              labelColor: midGreenColor,
               unselectedLabelColor: Colors.white,
               indicatorSize: TabBarIndicatorSize.label,
               indicatorPadding: EdgeInsets.all(5.0),
-              indicatorColor: Colors.white,
+              indicatorColor: midGreyColor,
             ),
-            backgroundColor: midPurpleColor, //AppBar color
+            backgroundColor: darkGreenColor, //AppBar color
           ),
         ),
       ),

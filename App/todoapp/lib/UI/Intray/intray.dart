@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/models/global.dart';
+import 'package:todoapp/models/widgets/intray_todo.dart';
 
 class IntrayPage extends StatefulWidget {
   @override
@@ -7,6 +8,7 @@ class IntrayPage extends StatefulWidget {
 }
 
 class _IntrayPageState extends State<IntrayPage> {
+
   ScrollController _controller = new ScrollController();
   @override
   Widget build(BuildContext context) {
@@ -22,13 +24,11 @@ class _IntrayPageState extends State<IntrayPage> {
   }
 
   List<Widget> getList() {
-    return [
-//      Container(
-//        margin: EdgeInsets.only(top: 10, left: 20.0, right: 20.0) ,
-//        height: 100,
-//        color: midGreyColor,
-//      ),
+    List<IntrayTodo> list = [];
 
-    ];
+    for(int i = 0; i < 10; i++){
+      list.add(IntrayTodo());
+    }
+    return list;
   }
 }
