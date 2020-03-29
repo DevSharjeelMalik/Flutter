@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/models/todo.dart';
 import '../global.dart';
 
 class IntrayTodo extends StatelessWidget {
-  final String title;
-  IntrayTodo({this.title});
+  final Todo todo;
+  final ValueKey key;
+
+  IntrayTodo(this.key,this.todo);
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +14,8 @@ class IntrayTodo extends StatelessWidget {
     var dispSize = MediaQuery.of(context).size.width *0.05;
 
     return Container(
-      margin: EdgeInsets.only(top: screenSize, left: dispSize, right: dispSize) ,
-      padding: EdgeInsets.all(15.0),
+      margin: EdgeInsets.only(top: screenSize, left: dispSize, right: dispSize),
+      padding: EdgeInsets.all(20.0),
       height: 100,
       decoration: BoxDecoration(
         color: midGreyColor,
@@ -26,23 +29,25 @@ class IntrayTodo extends StatelessWidget {
         ]
       ),
 
+          child: Row(
+            children: <Widget>[
+              Radio(
+                onChanged: null,
+              ),
+              Column(
+                children: <Widget>[
+                  Text(
+                    todo.title,
+                    style: taskTileTile,
+                  ),
+                  Text(
+                    todo.note.toString(),
+                  ),
+                ],
+              )
 
-    child: Row(
-      children: <Widget>[
-        Radio(
-
-        ),
-        Column(
-          children: <Widget>[
-            Text(
-              'Hello World',
-              style: taskTileTile,
-            ),
-          ],
-        )
-
-      ],
-    ),
+            ],
+          ),
     );
   }
 }

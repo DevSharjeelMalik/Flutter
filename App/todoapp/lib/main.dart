@@ -18,84 +18,92 @@ class MyApp extends StatelessWidget {
       padding: const EdgeInsets.only(top: 20.0) ,
       child: new MaterialApp(
         color: Colors.white,
-        home: DefaultTabController(
-          length: 3,
-          child: new Scaffold(
-            body: Stack(
-              children: <Widget>[
-                TabBarView(
-                children: [
-//                  new Container(
-//                    color: Colors.white,
-//                  ),
-                IntrayPage(),
-                  new Container(
-                    color: Colors.white,
-                  ),
-                  new Container(
-                    color: Colors.white,
-                  ),
-                ],
-              ),
-                Container(
-                    padding: EdgeInsets.only(left: 20.0),
-                    height: 190,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(30.0),
-                        bottomRight: Radius.circular(30.0),
-                      ),
-                      color: darkGreenColor,
-                    ),
+        home: HomePage(),
+      ),
+    );
+  }
+}
 
-                  child: Row(
-                     //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     crossAxisAlignment: CrossAxisAlignment.end,
-                      children: <Widget> [
-                        Container(
-                          margin: EdgeInsets.only(bottom: 40, left: 30),
-                          child: Text(
-                            'Notes',
-                            style: notesTileStyle,
-                          ),
-                        ),
-//                        ),
-                    ]
-                  )
-                  ),
-                Container(
-                  height: 70,
-                  width:70,
-                  margin: EdgeInsets.fromLTRB(350, 150, 0, 0),
-                  child: FloatingActionButton(
-                    child: Icon(Icons.add, size: 40),
-                    backgroundColor: midGreenColor,
-                    onPressed: (){},
-                  ),
-                )
-          ],
-            ),
-            appBar: new TabBar(
-              tabs: [
-                Tab(
-                  icon: new Icon(Icons.calendar_today,),
+class HomePage extends StatelessWidget {
+  const HomePage({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      child: new Scaffold(
+        body: Stack(
+          children: <Widget>[
+            TabBarView(
+            children: [
+              IntrayPage(),
+                new Container(
+                  color: midGreyColor,
+
                 ),
-                Tab(
-                  icon: new Icon(Icons.add),
+                new Container(
+                  color: midGreenColor,
                 ),
-                Tab(
-                  icon: new Icon(Icons.menu),
-                ),
-              ],
-              labelColor: midGreenColor,
-              unselectedLabelColor: Colors.white,
-              indicatorSize: TabBarIndicatorSize.label,
-              indicatorPadding: EdgeInsets.all(5.0),
-              indicatorColor: midGreyColor,
-            ),
-            backgroundColor: darkGreenColor, //AppBar color
+            ],
           ),
+            Container(
+                padding: EdgeInsets.only(left: 20.0),
+                height: 190,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30.0),
+                    bottomRight: Radius.circular(30.0),
+                  ),
+                  color: darkGreenColor,
+                ),
+
+              child: Row(
+                 crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget> [
+                    Container(
+                      margin: EdgeInsets.only(bottom: 40, left: 30),
+                      child: Text(
+                        'Notes',
+                        style: notesTileStyle,
+                      ),
+                    ),
+//                        ),
+                ]
+              )
+              ),
+            Container(
+              height: 70,
+              width:70,
+              margin: EdgeInsets.fromLTRB(350, 150, 0, 0),
+              child: FloatingActionButton(
+                child: Icon(Icons.add, size: 40),
+                backgroundColor: midGreenColor,
+                onPressed: (){},
+              ),
+            )
+      ],
         ),
+        appBar: new TabBar(
+          tabs: [
+            Tab(
+              icon: new Icon(Icons.calendar_today),
+            ),
+            Tab(
+              icon: new Icon(Icons.add),
+            ),
+            Tab(
+              icon: new Icon(Icons.menu),
+            ),
+          ],
+          labelColor: midGreenColor,
+          unselectedLabelColor: Colors.white,
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorPadding: EdgeInsets.all(5.0),
+          indicatorColor: midGreyColor,
+        ),
+        backgroundColor: darkGreenColor, //AppBar color
       ),
     );
   }
